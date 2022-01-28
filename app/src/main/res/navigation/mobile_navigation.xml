@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="tta.astrologerapp.talktoastro.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_articles"
+        android:name="tta.astrologerapp.talktoastro.ui.articles.ArticlesFragment"
+        android:label="@string/menu_articles"
+        tools:layout="@layout/fragment_articles" />
+
+    <fragment
+        android:id="@+id/nav_privacy_policy"
+        android:name="tta.astrologerapp.talktoastro.ui.privacypolicy.PrivacyPolicyFragment"
+        android:label="@string/menu_privacy"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+    <fragment
+        android:id="@+id/nav_Customer_Support"
+        android:name="tta.astrologerapp.talktoastro.ui.customersupport.CustomerSupportFragment"
+        android:label="@string/menu_customer_support"
+        tools:layout="@layout/fragment_customer_support" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="tta.astrologerapp.talktoastro.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="tta.astrologerapp.talktoastro.ui.Login.LoginFragment"
+        tools:layout="@layout/activity_login" />
+
+    <fragment
+        android:id="@+id/nav_article_detail"
+        android:name="tta.astrologerapp.talktoastro.ui.articles.ArticleDetailFragment"
+        tools:layout="@layout/fragment_article_detail" />
+
+    <fragment
+        android:id="@+id/nav_txv_email"
+        android:name="tta.astrologerapp.talktoastro.ui.profile.ProfileFragment"
+        tools:layout="@layout/profile_fragment"/>
+    <fragment
+        android:id="@+id/nav_txv_name"
+        android:name="tta.astrologerapp.talktoastro.ui.profile.ProfileFragment"
+        tools:layout="@layout/profile_fragment"/>
+    <fragment
+        android:id="@+id/nav_txv_phone"
+        android:name="tta.astrologerapp.talktoastro.ui.profile.ProfileFragment"
+        tools:layout="@layout/profile_fragment"/>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="tta.astrologerapp.talktoastro.ui.Login.LoginFragment"
+        tools:layout="@layout/activity_login"/>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:label="@string/menu_Profile"
+        android:name="tta.astrologerapp.talktoastro.ui.astroprofile.AstroProfileFragment"
+        tools:layout="@layout/astro_profile_fragment"/>
+    <fragment
+        android:id="@+id/nav_report_history"
+        android:label="@string/menu_Report_History"
+        android:name="tta.astrologerapp.talktoastro.ui.reports.ReportHistoryFragment"
+        tools:layout="@layout/fragment_report_history"/>
+    <fragment
+        android:id="@+id/nav_report_detail"
+        android:name="tta.astrologerapp.talktoastro.ui.reports.ReportDetailFragment"
+        tools:layout="@layout/fragment_report_detail"/>
+    <activity
+        android:id="@+id/nav_chat_history"
+        android:name="tta.astrologerapp.talktoastro.chat.activities.ChannelActivity"
+        tools:layout="@layout/activity_channel"
+        />
+    <fragment
+        android:id="@+id/nav_verifyOtp"
+        android:name="tta.astrologerapp.talktoastro.ui.verifyotp.VerifyOtp"
+        tools:layout="@layout/fragment_verify_otp"/>
+    <fragment
+        android:id="@+id/nav_free_questions"
+        android:name="tta.astrologerapp.talktoastro.ui.AskFreeQuestion.AskFreeQuestionFragment"
+       android:label="@string/AskFreeQuestion"
+        tools:layout="@layout/fragment_ask_free_question"/>
+    <fragment
+        android:id="@+id/nav_Answer"
+        android:name="tta.astrologerapp.talktoastro.ui.AskFreeQuestion.AnswerFragment"
+        android:label="@string/Answer"
+        tools:layout="@layout/fragment_answer"/>
+</navigation>
+

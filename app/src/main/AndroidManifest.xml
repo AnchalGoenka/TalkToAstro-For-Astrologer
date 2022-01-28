@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tta.astrologerapp.talktoastro">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".TTABaseAppplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo_tta1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_tta1"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".agora.chat.ViewChatHistory"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".agora.chat.AgoraMsgActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.NotificationActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".chat.activities.ChannelActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".chat.activities.MessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".chat.activities.UserActivity"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" /> <!-- <activity android:name=".Activity.LoginActivity"> -->
+        <!-- </activity> -->
+        <service
+            android:name=".WidgetService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".chat.services.MediaService"
+            android:exported="false" /> <!-- FCM service -->
+        <service
+            android:name=".services.FCMListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_icon" -->
+        <!-- /> -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_color" -->
+        <!-- /> -->
+        <!-- FCM instance ID service -->
+        <service
+            android:name=".chat.services.FCMInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".chat.services.RegistrationIntentService"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <receiver
+            android:name=".MyBroadcastReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

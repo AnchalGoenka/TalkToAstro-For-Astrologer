@@ -1,0 +1,80 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/chatbackground">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbarMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/message"
+        android:titleTextColor="@color/white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/message_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/typingIndicator"
+            android:layout_alignParentTop="true"
+            android:transcriptMode="alwaysScroll"
+            app:layout_constraintBottom_toTopOf="@+id/typingIndicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarMessage" />
+
+    <TextView
+            android:id="@+id/typingIndicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/listFooter"
+            android:layout_alignRight="@+id/message_list_view"
+            android:lines="1"
+            android:singleLine="true"
+            app:layout_constraintBottom_toTopOf="@+id/listFooter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/listFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+                android:id="@+id/messageInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:focusedByDefault="true"
+                android:hint="@string/type_message"
+            android:textColor="@color/black"
+            android:maxHeight="140dp"
+            android:scrollbars="vertical"
+            android:inputType="textMultiLine"
+            android:background="@drawable/chat_box"
+            android:minHeight="50dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"/>
+
+        <ImageButton
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@android:drawable/ic_menu_send" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
